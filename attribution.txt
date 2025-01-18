@@ -1,0 +1,3 @@
+Home background = Photo by Maxim Landolfi from Pexels: https://www.pexels.com/photo/abstract-3d-cube-structure-on-dark-background-28428592/
+services-background = Photo by Negative Space from Pexels: https://www.pexels.com/photo/gray-laptop-computer-showing-html-codes-in-shallow-focus-photography-160107/
+testimonials-background = Photo by Mikael Blomkvist from Pexels: https://www.pexels.com/photo/simple-workspace-at-home-6476595/
