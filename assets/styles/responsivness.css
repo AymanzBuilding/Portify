@@ -1,0 +1,247 @@
+@media (max-width: 1200px) {
+    .cards-row {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 40px;
+    }
+
+    .card {
+        width: 380px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .contact-container{
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 950px) {
+    .about-container {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .about-right {
+        padding-left: 0;
+    }
+
+    .about-right {
+        width: 90%;
+        order: -1;
+    }
+
+    .card {
+        width: 300px;
+    }
+
+    .cards-container {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+}
+
+@media (max-width: 900px) {
+    .animated-name span {
+        font-size: 80px;
+    }
+
+    .home-section .mini-title {
+        font-size: 20px;
+    }
+
+    .card {
+        max-width: 340px;
+        flex: 1 0 auto;
+    }
+
+    .cards-row {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        align-items: center;
+        padding-left: 20px;
+        padding-right: 20px;
+        justify-content: flex-start;
+    }
+
+    .services-header-container h2,
+    .portfolio-header h2,
+    .testimonials-left h2 {
+        font-size: 35px;
+    }
+
+    .skills-left h3 {
+        font-size: 25px;
+    }
+
+    .card .number {
+        font-size: 35px;
+    }
+
+    .services-section {
+        padding-bottom: 20px;
+    }
+
+    .portfolio-section {
+        padding-top: 0;
+    }
+
+    .portfolio-section h2 {
+        margin: 0;
+    }
+
+    .testimonials-right {
+        flex: initial;
+        width: 150px;
+    }
+
+    .footer-container{
+        flex-wrap: wrap;
+    }
+
+    .footer-left, .footer-middle, .footer-right{
+        flex: initial;
+        width: 50%;
+    }
+
+    footer{
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 800px) {
+    .profile-wrapper {
+        width: 300px;
+        margin: 0 auto;
+    }
+
+    #about-small-desc {
+        width: 350px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 80px;
+    }
+
+    .bigger-title {
+        font-size: 24px;
+    }
+
+    .small-title,
+    .testimonials-left p.main {
+        font-size: 16px;
+    }
+
+    .about-right ul {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .services-cards-container {
+        flex-wrap: wrap;
+        gap: 0;
+    }
+}
+
+@media (max-width: 750px) {
+    header.main nav {
+        display: none;
+    }
+
+    #menu-btn {
+        display: block;
+    }
+
+    #contact-btn {
+        display: none;
+    }
+
+    .testimonials {
+        display: flex;
+        align-items: center;
+        background-color: #f9f9f9;
+        justify-content: space-between;
+        height: 700px;
+    }
+}
+
+@media (max-width: 650px) {
+    .home-section {
+        padding: 20px 20px 80px 20px;
+    }
+
+    .animated-name span {
+        font-size: 40px;
+    }
+
+    .home-section .mini-title {
+        font-size: 18px;
+    }
+
+    .buttons button {
+        padding: 10px 16px;
+        font-size: 14px;
+    }
+
+    .skills-row {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .portfolio-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .image-container {
+        height: 400px;
+    }
+
+    .portfolio-card {
+        width: 100%;
+    }
+
+    .testimonials-right {
+        width: 150px;
+    }
+
+    .testimonial-card p{
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 550px) {
+    .social-container {
+        display: none;
+    }
+
+    .buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .buttons button {
+        margin: 0;
+    }
+
+    .testimonials-right {
+        width: 10%;
+    }
+}
+
+@media (max-width: 450px) {
+    .profile-wrapper {
+        width: 220px;
+        margin: 0 auto;
+    }
+
+    #about-small-desc {
+        width: 100%;
+        padding: 0 20px;
+    }
+}

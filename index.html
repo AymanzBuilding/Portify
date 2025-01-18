@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minimalist Portfolio Website Template for Creatives</title>
     <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="stylesheet" href="assets/styles/responsivness.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 
@@ -22,7 +23,12 @@
                     <li><a href="#testimonials">Testimonials</a></li>
                 </ul>
             </nav>
-            <a href="#contact"><button type="button" class="cv-btn">Contact</button></a>
+            <a id="contact-btn" href="#contact"><button type="button" class="cv-btn">Contact</button></a>
+            <a id="menu-btn" href="#contact">
+                <button type="button" class="cv-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </a>
         </header>
 
         <div class="header-placeholder"></div>
@@ -566,37 +572,58 @@
         });
 
         const testimonialCards = document.querySelectorAll('.testimonial-card');
-        const dots = document.querySelectorAll('.dot');
-        let currentTestimonialIndex = 0;
+const dots = document.querySelectorAll('.dot');
+const container = document.querySelector('.testimonial-card-container');
+let currentTestimonialIndex = 0;
 
-        function showTestimonial(index) {
-            // Remove active class from all cards and dots
-            testimonialCards.forEach((card, idx) => {
-                card.classList.remove('active');
-                dots[idx].classList.remove('active');
-            });
+// Function to dynamically adjust the container height
+function adjustContainerHeight() {
+    // Get the height of the currently active card
+    const activeCard = document.querySelector('.testimonial-card.active');
+    if (activeCard) {
+        container.style.height = `${activeCard.offsetHeight}px`;
+    }
+}
 
-            // Add active class to the current card and dot
-            testimonialCards[index].classList.add('active');
-            dots[index].classList.add('active');
-        }
+// Function to show a specific testimonial
+function showTestimonial(index) {
+    // Remove active class from all cards and dots
+    testimonialCards.forEach((card, idx) => {
+        card.classList.remove('active');
+        dots[idx].classList.remove('active');
+    });
 
-        // Automatic slide change
-        function nextTestimonial() {
-            currentTestimonialIndex = (currentTestimonialIndex + 1) % testimonialCards.length;
-            showTestimonial(currentTestimonialIndex);
-        }
+    // Add active class to the current card and dot
+    testimonialCards[index].classList.add('active');
+    dots[index].classList.add('active');
 
-        // Add click functionality to dots
-        dots.forEach(dot => {
-            dot.addEventListener('click', () => {
-                currentTestimonialIndex = parseInt(dot.dataset.index);
-                showTestimonial(currentTestimonialIndex);
-            });
-        });
+    // Adjust container height
+    adjustContainerHeight();
+}
 
-        // Start automatic sliding
-        setInterval(nextTestimonial, 5000); // Change slide every 5 seconds
+// Automatic slide change
+function nextTestimonial() {
+    currentTestimonialIndex = (currentTestimonialIndex + 1) % testimonialCards.length;
+    showTestimonial(currentTestimonialIndex);
+}
+
+// Add click functionality to dots
+dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+        currentTestimonialIndex = parseInt(dot.dataset.index);
+        showTestimonial(currentTestimonialIndex);
+    });
+});
+
+// Initial setup
+showTestimonial(currentTestimonialIndex); // Show the first testimonial
+adjustContainerHeight(); // Set initial container height
+
+// Re-adjust height on window resize
+window.addEventListener('resize', adjustContainerHeight);
+
+// Start automatic sliding
+setInterval(nextTestimonial, 5000); // Change slide every 5 seconds
 
     </script>
 </body>
