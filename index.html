@@ -21,14 +21,31 @@
                     <li><a href="#services">Services</a></li>
                     <li><a href="#portfolio">Portfolio</a></li>
                     <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
-            <a id="contact-btn" href="#contact"><button type="button" class="cv-btn">Contact</button></a>
-            <a id="menu-btn" href="#contact">
+            <a id="contact-btn" href="resume.html"><button type="button" class="cv-btn">Resume</button></a>
+            <a id="menu-btn" href="javascript:void(0)">
                 <button type="button" class="cv-btn">
                     <i class="fas fa-bars"></i>
                 </button>
             </a>
+
+            <nav id="mobile-nav">
+                <div class="logo">Portify</div>
+                <ul>
+                    <li><a class="active" data-href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="resume.html">Resume</a></li>
+                </ul>
+                <a id="contact-btn" href="resume.html">
+                    <button type="button" class="cv-btn">Resume</button>
+                </a>
+            </nav>
         </header>
 
         <div class="header-placeholder"></div>
@@ -572,59 +589,68 @@
         });
 
         const testimonialCards = document.querySelectorAll('.testimonial-card');
-const dots = document.querySelectorAll('.dot');
-const container = document.querySelector('.testimonial-card-container');
-let currentTestimonialIndex = 0;
+        const dots = document.querySelectorAll('.dot');
+        const container = document.querySelector('.testimonial-card-container');
+        let currentTestimonialIndex = 0;
 
-// Function to dynamically adjust the container height
-function adjustContainerHeight() {
-    // Get the height of the currently active card
-    const activeCard = document.querySelector('.testimonial-card.active');
-    if (activeCard) {
-        container.style.height = `${activeCard.offsetHeight}px`;
-    }
-}
+        // Function to dynamically adjust the container height
+        function adjustContainerHeight() {
+            // Get the height of the currently active card
+            const activeCard = document.querySelector('.testimonial-card.active');
+            if (activeCard) {
+                container.style.height = `${activeCard.offsetHeight}px`;
+            }
+        }
 
-// Function to show a specific testimonial
-function showTestimonial(index) {
-    // Remove active class from all cards and dots
-    testimonialCards.forEach((card, idx) => {
-        card.classList.remove('active');
-        dots[idx].classList.remove('active');
-    });
+        // Function to show a specific testimonial
+        function showTestimonial(index) {
+            // Remove active class from all cards and dots
+            testimonialCards.forEach((card, idx) => {
+                card.classList.remove('active');
+                dots[idx].classList.remove('active');
+            });
 
-    // Add active class to the current card and dot
-    testimonialCards[index].classList.add('active');
-    dots[index].classList.add('active');
+            // Add active class to the current card and dot
+            testimonialCards[index].classList.add('active');
+            dots[index].classList.add('active');
 
-    // Adjust container height
-    adjustContainerHeight();
-}
+            // Adjust container height
+            adjustContainerHeight();
+        }
 
-// Automatic slide change
-function nextTestimonial() {
-    currentTestimonialIndex = (currentTestimonialIndex + 1) % testimonialCards.length;
-    showTestimonial(currentTestimonialIndex);
-}
+        // Automatic slide change
+        function nextTestimonial() {
+            currentTestimonialIndex = (currentTestimonialIndex + 1) % testimonialCards.length;
+            showTestimonial(currentTestimonialIndex);
+        }
 
-// Add click functionality to dots
-dots.forEach(dot => {
-    dot.addEventListener('click', () => {
-        currentTestimonialIndex = parseInt(dot.dataset.index);
-        showTestimonial(currentTestimonialIndex);
-    });
-});
+        // Add click functionality to dots
+        dots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                currentTestimonialIndex = parseInt(dot.dataset.index);
+                showTestimonial(currentTestimonialIndex);
+            });
+        });
 
-// Initial setup
-showTestimonial(currentTestimonialIndex); // Show the first testimonial
-adjustContainerHeight(); // Set initial container height
+        // Initial setup
+        showTestimonial(currentTestimonialIndex); // Show the first testimonial
+        adjustContainerHeight(); // Set initial container height
 
-// Re-adjust height on window resize
-window.addEventListener('resize', adjustContainerHeight);
+        // Re-adjust height on window resize
+        window.addEventListener('resize', adjustContainerHeight);
 
-// Start automatic sliding
-setInterval(nextTestimonial, 5000); // Change slide every 5 seconds
+        // Start automatic sliding
+        setInterval(nextTestimonial, 5000); // Change slide every 5 seconds
 
+        document.getElementById('menu-btn').addEventListener('click', function () {
+            document.getElementById('mobile-nav').classList.add('active');
+        });
+
+        document.querySelectorAll('#mobile-nav a').forEach(function (link) {
+            link.addEventListener('click', function () {
+                document.getElementById('mobile-nav').classList.remove('active');
+            });
+        });
     </script>
 </body>
 

@@ -143,9 +143,7 @@
         flex-wrap: wrap;
         gap: 0;
     }
-}
 
-@media (max-width: 750px) {
     header.main nav {
         display: none;
     }
@@ -157,7 +155,9 @@
     #contact-btn {
         display: none;
     }
+}
 
+@media (max-width: 750px) {
     .testimonials {
         display: flex;
         align-items: center;
