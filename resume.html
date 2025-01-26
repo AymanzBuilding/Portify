@@ -1,0 +1,679 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Your Resume</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="stylesheet" href="assets/styles/responsivness.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #0d0d0e;
+            color: white;
+            font-family: "Lato", serif;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #0d0d0e;
+        }
+
+        header .logo {
+            font-family: "Be Vietnam Pro", serif;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .cv-btn {
+            background-color: #ffcb00;
+            /* yellow color for buttons */
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .resume-container {
+            display: flex;
+            flex-direction: row;
+            padding: 40px 20px;
+        }
+
+        .left-section {
+            width: 250px;
+            padding-right: 20px;
+            border-right: 2px solid #ffcb00;
+            /* yellow border */
+        }
+
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid #ffcb00;
+            margin-bottom: 20px;
+        }
+
+        h2,
+        h3,
+        h4 {
+            font-family: "Be Vietnam Pro", serif;
+            letter-spacing: 1px;
+        }
+
+        .left-section h2 {
+            font-size: 20px;
+        }
+
+        .left-section h3 {
+            border-bottom: 2px solid #ffcb00;
+            color: #ffcb00;
+            display: inline-block;
+        }
+
+        p {
+            font-size: 13px;
+        }
+
+        .skills-list {
+            margin-top: 20px;
+        }
+
+        .skills-list ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .skills-list li {
+            margin-bottom: 10px;
+        }
+
+        .skills-list span {
+            font-weight: bold;
+        }
+
+        .skill-bar {
+            height: 5px;
+            background-color: #333;
+            margin-top: 5px;
+        }
+
+        .skill-bar div {
+            height: 100%;
+            background-color: #ffcb00;
+            /* yellow color for skills */
+        }
+
+        .contact-info {
+            margin-top: 20px;
+        }
+
+        .contact-info .row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .contact-info a {
+            color: #ffcb00;
+            text-decoration: none;
+            margin-right: 10px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .contact-info i {
+            color: white;
+            font-size: 16px;
+        }
+
+        .right-section {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .right-section h2 {
+            font-family: "Be Vietnam Pro", serif;
+        }
+
+        .bio-section {
+            background-color: #1f1f1f;
+            /* Slightly lighter background */
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .bio-section h3 {
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+            color: #ffcb00;
+        }
+
+        .bio-section p {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .experience-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .experience-card {
+            background-color: #212121;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .experience-card h4 {
+            font-size: 1.4rem;
+            color: #ffcb00;
+        }
+
+        .experience-card p {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .experience-card ul {
+            margin-top: 10px;
+        }
+
+        .experience-card ul li {
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .experience-card .skills-used {
+            margin-top: 10px;
+        }
+
+        .experience-card .skills-used span {
+            color: #ffcb00;
+        }
+
+        .skills-used strong {
+            margin-right: 10px;
+        }
+
+        .skills-used .hashtag {
+            /* background-color: #ffcb00; */
+            /* yellow background for hashtags */
+            color: black;
+            /* black text color for contrast */
+            /* padding: 4px 8px; */
+            margin-right: 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            letter-spacing: 2px;
+            margin-right: 20px;
+            font-weight: 600;
+            text-transform: uppercase;
+            display: inline-block;
+        }
+
+        .skills-section {
+            background-color: #1f1f1f;
+            /* Slightly lighter background */
+            padding: 20px;
+            margin-bottom: 20px;
+            margin-top: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .skills-section h3 {
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            color: #ffcb00;
+            /* Yellow color for the title */
+        }
+
+        .skills-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .skills-section li {
+            margin-bottom: 15px;
+        }
+
+        .skills-section li span {
+            font-weight: bold;
+            margin-left: 10px;
+        }
+
+        .skill-bar {
+            height: 8px;
+            background-color: #333;
+            margin-top: 5px;
+            border-radius: 4px;
+        }
+
+        .skill-bar div {
+            height: 100%;
+            background-color: #ffcb00;
+            /* Yellow color for progress */
+            border-radius: 4px;
+        }
+
+        /* Fade-in and translate animation (common for all elements) */
+        .fade-in {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        /* Initial hidden state */
+        .hidden {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        /* Bounce animation for contact links */
+        .bounce {
+            animation: bounce 0.3s ease-in-out;
+        }
+
+        @keyframes bounce {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-5px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        /* Skill bar fill animation */
+        .skill-bar div {
+            transform-origin: left;
+            /* Make the bar grow from the left side */
+            transition: transform 0.6s ease-out;
+        }
+
+        @media (max-width: 750px){
+            .resume-container {
+                flex-direction: column;
+            }
+
+            .left-section{
+                width: 100%;
+                border-right: none;
+                border-bottom: 2px solid #ffcb00;
+                margin-bottom: 20px;
+                padding: 40px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">Portify</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Portfolio</a></li>
+                <li><a href="resume.html" class="active">Resume</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="resume-container">
+        <!-- Left Section -->
+        <div class="left-section">
+            <img src="assets/images/my-image.jpg" alt="Profile Picture" class="profile-img">
+            <h2>Ayman Atif</h2>
+            <p>Crafting seamless programming solutions with expertise across various technologies, delivering impactful
+                digital experiences.</p>
+
+            <div class="skills-list">
+                <h3>Skills</h3>
+                <ul>
+                    <li>Web Development <span>90%</span>
+                        <div class="skill-bar">
+                            <div style="width: 90%"></div>
+                        </div>
+                    </li>
+                    <li>Mobile Development <span>85%</span>
+                        <div class="skill-bar">
+                            <div style="width: 85%"></div>
+                        </div>
+                    </li>
+                    <li>AI Solutions <span>80%</span>
+                        <div class="skill-bar">
+                            <div style="width: 80%"></div>
+                        </div>
+                    </li>
+                    <li>Desktop Development <span>95%</span>
+                        <div class="skill-bar">
+                            <div style="width: 95%"></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="languages">
+                <h3>Languages</h3>
+                <p>Arabic (Native), English (Fluent), French (Intermediate)</p>
+            </div>
+
+            <div class="contact-info">
+                <h3>Contact</h3>
+                <div class="row">
+                    <a href="mailto:a95yman@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+                    <a href="https://linkedin.com/in/a95yman" target="_blank"><i class="fab fa-linkedin"></i>
+                        LinkedIn</a>
+                    <a href="https://wa.me/212688459384" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Section -->
+        <div class="right-section">
+            <!-- Bio Section -->
+            <div class="bio-section">
+                <h3>About Me</h3>
+                <p>
+                    I am a passionate and driven software developer with a focus on creating seamless digital
+                    experiences.
+                    Throughout my career, I have gained extensive experience in web development, mobile apps, and AI
+                    integration.
+                    I take pride in my ability to learn quickly, adapt to challenges, and deliver impactful solutions
+                    that exceed expectations.
+                </p>
+            </div>
+
+            <!-- Experience Section -->
+            <div class="experience-section">
+                <!-- Experience Card 1 -->
+                <div class="experience-card">
+                    <h4>Eco - E-commerce</h4>
+                    <p><strong>2017</strong></p>
+                    <p>Worked with Eco, a leading e-commerce company, where I developed e-commerce websites using
+                        front-end and back-end technologies.</p>
+                    <div class="skills-used">
+                        <strong>Skills Used:</strong>
+                        <span class="hashtag">#HTML</span>
+                        <span class="hashtag">#CSS</span>
+                        <span class="hashtag">#JavaScript</span>
+                        <span class="hashtag">#PHP</span>
+                        <span class="hashtag">#ASP</span>
+                    </div>
+                </div>
+
+                <!-- Experience Card 2 -->
+                <div class="experience-card">
+                    <h4>ONEE Internship</h4>
+                    <p><strong>Al Hoceima</strong></p>
+                    <p>Internship at ONEE focused on database management, desktop app development, and hardware
+                        maintenance.</p>
+                    <div class="skills-used">
+                        <strong>Skills Used:</strong>
+                        <span class="hashtag">#Database Management</span>
+                        <span class="hashtag">#Desktop Development</span>
+                    </div>
+                </div>
+
+                <!-- Experience Card 3 -->
+                <div class="experience-card">
+                    <h4>Hackathon Winner</h4>
+                    <p><strong>Android App Development</strong></p>
+                    <p>Won a hackathon with a 6-member team by creating a highly functional Android application using
+                        Android Studio.</p>
+                    <div class="skills-used">
+                        <strong>Skills Used:</strong>
+                        <span class="hashtag">#Android Studio</span>
+                        <span class="hashtag">#Java</span>
+                        <span class="hashtag">#Teamwork</span>
+                    </div>
+                </div>
+
+                <!-- Experience Card 4 -->
+                <div class="experience-card">
+                    <h4>Arabnet - AI Competition</h4>
+                    <p><strong>Casablanca</strong></p>
+                    <p>Participated in Arabnet, diving into AI, using Python to create a product targeted by several
+                        startups in Morocco.</p>
+                    <div class="skills-used">
+                        <strong>Skills Used:</strong>
+                        <span class="hashtag">#Python</span>
+                        <span class="hashtag">#AI</span>
+                        <span class="hashtag">#Machine Learning</span>
+                    </div>
+                </div>
+
+                <!-- Experience Card 5 -->
+                <div class="experience-card">
+                    <h4>Odoo Developer</h4>
+                    <p><strong>1 Year</strong></p>
+                    <p>Worked for one year at Odoo, developing modules and APIs using Flask, including a module for
+                        optical goods exportation.</p>
+                    <div class="skills-used">
+                        <strong>Skills Used:</strong>
+                        <span class="hashtag">#Flask</span>
+                        <span class="hashtag">#Odoo Modules</span>
+                        <span class="hashtag">#API Development</span>
+                    </div>
+                </div>
+
+                <!-- Experience Card 6 -->
+                <div class="experience-card">
+                    <h4>Grosomodo - Mobile Developer</h4>
+                    <p><strong>2018</strong></p>
+                    <p>As the lead mobile developer, created Android and iOS applications, along with APIs for
+                        integration.</p>
+                    <div class="skills-used">
+                        <strong>Skills Used:</strong>
+                        <span class="hashtag">#Android</span>
+                        <span class="hashtag">#iOS</span>
+                        <span class="hashtag">#API Development</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skills Section -->
+            <div class="skills-section">
+                <h3>Skills</h3>
+                <ul>
+                    <li>
+                        HTML <span>100%</span>
+                        <div class="skill-bar">
+                            <div style="width: 100%"></div>
+                        </div>
+                    </li>
+                    <li>
+                        CSS <span>100%</span>
+                        <div class="skill-bar">
+                            <div style="width: 100%"></div>
+                        </div>
+                    </li>
+                    <li>
+                        JavaScript <span>100%</span>
+                        <div class="skill-bar">
+                            <div style="width: 100%"></div>
+                        </div>
+                    </li>
+                    <li>
+                        Flask, PostgreSQL, SQLite <span>100%</span>
+                        <div class="skill-bar">
+                            <div style="width: 100%"></div>
+                        </div>
+                    </li>
+                    <li>
+                        Python <span>90%</span>
+                        <div class="skill-bar">
+                            <div style="width: 90%"></div>
+                        </div>
+                    </li>
+                    <li>
+                        C#, ASP <span>100%</span>
+                        <div class="skill-bar">
+                            <div style="width: 100%"></div>
+                        </div>
+                    </li>
+                    <li>
+                        PHP <span>100%</span>
+                        <div class="skill-bar">
+                            <div style="width: 100%"></div>
+                        </div>
+                    </li>
+                    <li>
+                        React <span>80%</span>
+                        <div class="skill-bar">
+                            <div style="width: 80%"></div>
+                        </div>
+                    </li>
+                    <li>
+                        Java, Android Studio <span>80%</span>
+                        <div class="skill-bar">
+                            <div style="width: 80%"></div>
+                        </div>
+                    </li>
+                    <li>
+                        Flutter <span>70%</span>
+                        <div class="skill-bar">
+                            <div style="width: 70%"></div>
+                        </div>
+                    </li>
+                    <li>
+                        Problem Solving <span>90%</span>
+                        <div class="skill-bar">
+                            <div style="width: 90%"></div>
+                        </div>
+                    </li>
+                    <li>
+                        AI <span>90%</span>
+                        <div class="skill-bar">
+                            <div style="width: 90%"></div>
+                        </div>
+                    </li>
+                    <li>
+                        Full Stack <span>100%</span>
+                        <div class="skill-bar">
+                            <div style="width: 100%"></div>
+                        </div>
+                    </li>
+                    <li>
+                        Odoo <span>90%</span>
+                        <div class="skill-bar">
+                            <div style="width: 90%"></div>
+                        </div>
+                    </li>
+                    <li>
+                        Database, Complex Queries <span>100%</span>
+                        <div class="skill-bar">
+                            <div style="width: 100%"></div>
+                        </div>
+                    </li>
+                    <li>
+                        Scraping <span>100%</span>
+                        <div class="skill-bar">
+                            <div style="width: 100%"></div>
+                        </div>
+                    </li>
+                    <li>
+                        Tools Creation <span>100%</span>
+                        <div class="skill-bar">
+                            <div style="width: 100%"></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Select all elements to animate
+            const animatableElements = document.querySelectorAll(
+                'h2, h3, h4, p, .experience-card, .bio-section, .skills-list, .contact-info a, .skill-bar div'
+            );
+
+            // Set initial hidden state for all elements
+            animatableElements.forEach(el => {
+                el.style.opacity = 0; // Hide the element
+                el.style.transform = "translateY(20px)"; // Apply a small offset for animation
+                el.style.transition = "opacity 0.6s ease-out, transform 0.6s ease-out"; // Animation styles
+            });
+
+            // Create IntersectionObserver to manage animations
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // When in viewport, make visible and animate
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = "translateY(0)";
+                    } else {
+                        // When out of viewport, reset to hidden state
+                        entry.target.style.opacity = 0;
+                        entry.target.style.transform = "translateY(20px)";
+                    }
+                });
+            }, { threshold: 0.2 }); // Trigger when 20% of the element is visible
+
+            // Observe all animatable elements
+            animatableElements.forEach(el => observer.observe(el));
+
+            // Profile image hover effect
+            const profileImage = document.querySelector('.profile-img');
+            profileImage.addEventListener('mouseenter', () => {
+                profileImage.style.transform = "scale(1.1)";
+                profileImage.style.transition = "transform 0.3s ease-in-out";
+            });
+            profileImage.addEventListener('mouseleave', () => {
+                profileImage.style.transform = "scale(1)";
+            });
+
+            // Contact links bounce effect
+            const contactLinks = document.querySelectorAll('.contact-info a');
+            contactLinks.forEach(link => {
+                link.addEventListener('mouseenter', () => {
+                    link.classList.add('bounce');
+                });
+                link.addEventListener('animationend', () => {
+                    link.classList.remove('bounce');
+                });
+            });
+
+            // Skill bars animation
+            const skillBars = document.querySelectorAll('.skill-bar div');
+            const skillBarObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.transform = "scaleX(1)";
+                    } else {
+                        entry.target.style.transform = "scaleX(0)"; // Reset when out of viewport
+                    }
+                });
+            }, { threshold: 0.5 });
+            skillBars.forEach(bar => {
+                skillBarObserver.observe(bar);
+                bar.style.transform = "scaleX(0)"; // Initial state (hidden)
+            });
+        });
+
+    </script>
+</body>
+
+</html>
