@@ -651,6 +651,28 @@
                 document.getElementById('mobile-nav').classList.remove('active');
             });
         });
+
+        // Set up the Intersection Observer
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Add the animation class when the element is in view
+                    entry.target.classList.add('element-in-view');
+                } else {
+                    // Remove the animation class if the element is out of view
+                    entry.target.classList.remove('element-in-view');
+                }
+            });
+        }, { threshold: 0.2 }); // Trigger when 20% of the element is in view
+
+        // Select all elements you want to animate
+        const elementsToAnimate = document.querySelectorAll('.about-left, .about-right, .cards-container, .card, .services-header-container, .services-cards-container, .transparent-card, .skills-row, .skills-left, .skills-right, .skill');
+
+        // Start observing each element
+        elementsToAnimate.forEach(element => {
+            observer.observe(element);
+        });
+
     </script>
 </body>
 

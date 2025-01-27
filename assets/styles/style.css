@@ -1404,3 +1404,120 @@ sup {
         opacity: 0.5;
     }
 }
+
+/* General animation for elements */
+@keyframes moveInFromRight {
+    0% {
+        opacity: 0;
+        left: 20px;
+    }
+
+    100% {
+        opacity: 1;
+        left: 0;
+    }
+}
+
+/* Hide elements initially */
+.about-left,
+.about-right,
+.cards-container,
+.card {
+    opacity: 0;
+    position: relative;
+    visibility: hidden;
+    /* Ensure they are hidden when out of view */
+}
+
+/* Apply animation classes when element is in the viewport */
+.element-in-view {
+    animation: moveInFromRight 0.5s forwards;
+    visibility: visible;
+    /* Make visible once animation starts */
+}
+
+/* Staggered delays for sections */
+.about-left.element-in-view {
+    animation-delay: 0.1s;
+}
+
+.about-right.element-in-view {
+    animation-delay: 0.2s;
+}
+
+.cards-container.element-in-view {
+    animation-delay: 0.1s;
+}
+
+/* Staggered delays for cards */
+.card.element-in-view {
+    animation-delay: 0.2s;
+}
+
+/* Add more stagger delay for each card */
+.card:nth-child(1).element-in-view {
+    animation-delay: 0.1s;
+}
+
+.card:nth-child(2).element-in-view {
+    animation-delay: 0.2s;
+}
+
+.card:nth-child(3).element-in-view {
+    animation-delay: 0.3s;
+}
+
+.card:nth-child(4).element-in-view {
+    animation-delay: 0.4s;
+}
+
+/* Hide elements initially */
+.services-header-container,
+.services-cards-container,
+.skills-row,
+.skills-left,
+.skills-right,
+.transparent-card,
+.skill {
+    opacity: 0;
+    position: relative;
+    visibility: hidden; /* Ensure they are hidden when out of view */
+}
+
+/* Apply animation classes when element is in the viewport */
+.element-in-view {
+    animation: moveInFromRight 0.5s forwards;
+    visibility: visible; /* Make visible once animation starts */
+}
+
+/* Staggered delays for services section */
+.services-header-container.element-in-view {
+    animation-delay: 0.1s;
+}
+
+.services-cards-container.element-in-view {
+    animation-delay: 0.2s;
+}
+
+/* Staggered delays for each service card */
+.transparent-card.element-in-view {
+    animation-delay: 0.3s;
+}
+
+/* Skills Section */
+.skills-row.element-in-view {
+    animation-delay: 0.2s;
+}
+
+.skills-left.element-in-view {
+    animation-delay: 0.3s;
+}
+
+.skills-right.element-in-view {
+    animation-delay: 0.4s;
+}
+
+/* Staggered delay for skills */
+.skill.element-in-view {
+    animation-delay: 0.5s;
+}

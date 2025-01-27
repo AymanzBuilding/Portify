@@ -53,17 +53,15 @@
 
     .card {
         max-width: 340px;
-        flex: 1 0 auto;
+        /* flex: 1 0 auto; */
     }
 
     .cards-row {
-        overflow-x: auto;
-        flex-wrap: nowrap;
         flex-direction: row;
         align-items: center;
+        flex-wrap: wrap;
         padding-left: 20px;
         padding-right: 20px;
-        justify-content: flex-start;
     }
 
     .services-header-container h2,
