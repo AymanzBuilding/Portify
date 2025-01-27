@@ -1,15 +1,14 @@
-/* Copyright 
-Home Backgorund : Photo by Ale Conchillos: https://www.pexels.com/photo/white-and-black-light-streaks-3648850/
-*/
-
+/* Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+/* Variables */
 :root {
     /* --dark-blue-gray: #1f1f25; */
     --dark-blue-gray: #0d0d0e;
 }
 
+/* Styling all elements */
 * {
     scrollbar-width: thin;
     font-family: "Lato", serif;
@@ -17,6 +16,7 @@ Home Backgorund : Photo by Ale Conchillos: https://www.pexels.com/photo/white-an
     box-sizing: border-box;
 }
 
+/* Default Styles */
 html {
     scroll-behavior: smooth;
 }
@@ -26,6 +26,7 @@ body {
     font-family: "Lato", serif;
 }
 
+/* Header Wrapper Styles ======================================================== */
 .header-wrapper {
     position: relative;
     overflow: hidden;
@@ -45,7 +46,6 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     z-index: -1;
-    /* Place it behind content */
     animation: zoomBackground 10s infinite alternate ease-in-out;
 }
 
@@ -152,6 +152,7 @@ button {
     font-family: "Be Vietnam Pro", serif;
 }
 
+/* Home Section Styles ======================================================== */
 .home-section .mini-title {
     font-size: 40px;
     font-weight: 300;
@@ -300,14 +301,6 @@ button {
     }
 }
 
-/* 
-.home-section h2 {
-    font-size: 40px;
-    font-weight: 300;
-    margin: 20px 0;
-    animation: float-left-right 3s ease-in-out infinite;
-} */
-
 .animated-name {
     display: flex;
     justify-content: center;
@@ -392,9 +385,11 @@ button {
     }
 }
 
-/* New Section Styles */
+/* Home Section Styles End ======================================================== */
 
-/* About Section */
+/* Header Wrapper Styles End ====================================================== */
+
+/* About Section Styles =========================================================== */
 .about-section {
     display: flex;
     flex-direction: column;
@@ -639,52 +634,14 @@ button {
     text-align: center;
 }
 
-@media (max-width: 768px) {
-    .cards-row {
-        flex-direction: column;
-        align-items: center;
-        gap: 30px;
-    }
+/* About Section Styles End ======================================================= */
 
-    .card {
-        width: 90%;
-    }
-
-    .card.odd,
-    .card.even {
-        transform: translateY(0);
-    }
-}
-
-@media (max-width: 768px) {
-    .about-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .about-left,
-    .about-right {
-        width: 100%;
-    }
-
-    .cards-row {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .card {
-        margin-bottom: 20px;
-        width: 80%;
-    }
-}
-
-/* Services Section */
+/* Services Section Styles ======================================================== */
 .services-section {
     padding: 60px 20px;
     background-color: #f9f9f9;
 }
 
-/* Services Header Container */
 .services-header-container {
     position: relative;
     display: flex;
@@ -726,8 +683,6 @@ button {
 .transparent-card {
     padding: 20px;
     border-radius: 6px;
-    /* background-color: white; */
-    /* box-shadow: rgba(0, 0, 0, 0.05) 0 0 20px; */
     flex: 1;
     max-width: 350px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -809,7 +764,9 @@ button {
     background-color: var(--dark-blue-gray);
 }
 
-/* Portfolio Section Styling */
+/* Services Section Styles End ==================================================== */
+
+/* Portfolio Section Styles ======================================================== */
 .portfolio-section {
     padding: 50px;
     background-color: #f7f7f7;
@@ -972,230 +929,10 @@ button {
     /* Indicate the image is clickable */
 }
 
-.contact-section {
-    background-color: var(--dark-blue-gray);
-    color: white;
-    padding: 100px 20px;
-    text-align: center;
-}
+/* Portfolio Section Styles End ==================================================== */
 
-.contact-section h2 {
-    font-size: 50px;
-    color: white;
-    position: relative;
-    margin: 0;
-    font-family: "Be Vietnam Pro", serif;
-}
 
-.contact-section p {
-    font-size: 16px;
-    max-width: 550px;
-    color: white;
-    text-align: center;
-    line-height: 1.5;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 50px;
-}
-
-.contact-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
-    /* Space between the phone cards */
-}
-
-.contact-container a {
-    text-decoration: none;
-}
-
-.contact-container p {
-    color: white;
-}
-
-.contact-phone {
-    background-color: rgba(255, 255, 255, 0.08);
-    color: var(--dark-blue-gray);
-    border-radius: 10px;
-    width: 200px;
-    height: 300px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
-    position: relative;
-    animation: swim 10s ease-in-out infinite;
-    user-select: none;
-    cursor: pointer;
-    transition: background-color 0.5s;
-}
-
-@keyframes swim {
-    0% {
-        transform: translate(var(--randomXStart), var(--randomYStart));
-    }
-
-    25% {
-        transform: translate(var(--randomX1), var(--randomY1));
-    }
-
-    50% {
-        transform: translate(var(--randomX2), var(--randomY2));
-    }
-
-    75% {
-        transform: translate(var(--randomX3), var(--randomY3));
-    }
-
-    100% {
-        transform: translate(var(--randomX4), var(--randomY4));
-    }
-}
-
-.contact-phone:hover,
-.contact-phone.active {
-    background-color: #f7f7f7;
-}
-
-.contact-phone:hover p,
-.contact-phone.active p {
-    color: black;
-}
-
-/* .contact-phone i {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-} */
-
-.contact-phone img {
-    width: 32px;
-    height: 32px;
-    margin-bottom: 10px;
-}
-
-.contact-phone p {
-    margin: 0;
-}
-
-/* Footer styles */
-footer {
-    background-color: var(--dark-blue-gray);
-    /* You can adjust this color */
-    color: white;
-    padding: 40px 20px;
-}
-
-.footer-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    max-width: 1200px;
-    margin: 0 auto;
-    flex-wrap: wrap;
-}
-
-.footer-left,
-.footer-middle,
-.footer-right {
-    flex: 1;
-    padding: 10px;
-    margin: 10px;
-}
-
-/* Page name and description */
-.footer-left h1 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-}
-
-.footer-left p {
-    font-size: 1rem;
-    line-height: 1.5;
-}
-
-/* Navigation list */
-.footer-middle h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-}
-
-.footer-middle ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-
-.footer-middle ul li {
-    margin-bottom: 8px;
-}
-
-.footer-middle ul li a {
-    color: white;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.footer-middle ul li a:hover {
-    color: #00BFFF;
-    /* Hover effect color */
-}
-
-/* Social media icons */
-.footer-right h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-}
-
-.footer-social-icons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.footer-social-icon {
-    width: 40px;
-    height: 40px;
-    background-color: white;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--dark-blue-gray);
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.footer-social-icon::before {
-    content: '';
-    width: 32px;
-    height: 32px;
-}
-
-/* Individual icon classes (just for styling purposes) */
-.footer-social-icon.instagram::before {
-    content: url('../icons/instagram.png');
-    /* Replace with actual icon */
-}
-
-.footer-social-icon.whatsapp::before {
-    content: url('../icons/whatsapp.png');
-    /* Replace with actual icon */
-}
-
-.footer-social-icon.gmail::before {
-    background-image: url('../icons/gmail.png');
-    /* Replace with actual icon */
-}
-
-.footer-social-icon.linkedin::before {
-    background-image: url('../icons/linkedin.png');
-    /* Replace with actual icon */
-}
-
-/* Testimonials Section */
+/* Testimonials Section Styles ===================================================== */
 .testimonials {
     display: flex;
     align-items: center;
@@ -1313,6 +1050,226 @@ footer {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
+/* Testimonials Section Styles End =============================================== */
+
+/* Contact Section Styles ======================================================== */
+.contact-section {
+    background-color: var(--dark-blue-gray);
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-size: 50px;
+    color: white;
+    position: relative;
+    margin: 0;
+    font-family: "Be Vietnam Pro", serif;
+}
+
+.contact-section p {
+    font-size: 16px;
+    max-width: 550px;
+    color: white;
+    text-align: center;
+    line-height: 1.5;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    /* Space between the phone cards */
+}
+
+.contact-container a {
+    text-decoration: none;
+}
+
+.contact-container p {
+    color: white;
+}
+
+.contact-phone {
+    background-color: rgba(255, 255, 255, 0.08);
+    color: var(--dark-blue-gray);
+    border-radius: 10px;
+    width: 200px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    position: relative;
+    animation: swim 10s ease-in-out infinite;
+    user-select: none;
+    cursor: pointer;
+    transition: background-color 0.5s;
+}
+
+@keyframes swim {
+    0% {
+        transform: translate(var(--randomXStart), var(--randomYStart));
+    }
+
+    25% {
+        transform: translate(var(--randomX1), var(--randomY1));
+    }
+
+    50% {
+        transform: translate(var(--randomX2), var(--randomY2));
+    }
+
+    75% {
+        transform: translate(var(--randomX3), var(--randomY3));
+    }
+
+    100% {
+        transform: translate(var(--randomX4), var(--randomY4));
+    }
+}
+
+.contact-phone:hover,
+.contact-phone.active {
+    background-color: #f7f7f7;
+}
+
+.contact-phone:hover p,
+.contact-phone.active p {
+    color: black;
+}
+
+.contact-phone img {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 10px;
+}
+
+.contact-phone p {
+    margin: 0;
+}
+
+/* Contact Section Styles End ==================================================== */
+
+/* Footer Styles ================================================================= */
+footer {
+    background-color: var(--dark-blue-gray);
+    color: white;
+    padding: 40px 20px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.footer-left,
+.footer-middle,
+.footer-right {
+    flex: 1;
+    padding: 10px;
+    margin: 10px;
+}
+
+/* Page name and description */
+.footer-left h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.footer-left p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Navigation list */
+.footer-middle h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.footer-middle ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.footer-middle ul li {
+    margin-bottom: 8px;
+}
+
+.footer-middle ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-middle ul li a:hover {
+    color: #00BFFF;
+    /* Hover effect color */
+}
+
+/* Social media icons */
+.footer-right h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.footer-social-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.footer-social-icon {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--dark-blue-gray);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.footer-social-icon::before {
+    content: '';
+    width: 32px;
+    height: 32px;
+}
+
+.footer-social-icon.instagram::before {
+    content: url('../icons/instagram.png');
+}
+
+.footer-social-icon.whatsapp::before {
+    content: url('../icons/whatsapp.png');
+}
+
+.footer-social-icon.gmail::before {
+    background-image: url('../icons/gmail.png');
+}
+
+.footer-social-icon.linkedin::before {
+    background-image: url('../icons/linkedin.png');
+}
+
+/* Footer Styles End ============================================================= */
+
+/* Basic Styles & Animations ===================================================== */
 sup {
     font-weight: 700;
     font-size: 30px;
@@ -1481,13 +1438,15 @@ sup {
 .skill {
     opacity: 0;
     position: relative;
-    visibility: hidden; /* Ensure they are hidden when out of view */
+    visibility: hidden;
+    /* Ensure they are hidden when out of view */
 }
 
 /* Apply animation classes when element is in the viewport */
 .element-in-view {
     animation: moveInFromRight 0.5s forwards;
-    visibility: visible; /* Make visible once animation starts */
+    visibility: visible;
+    /* Make visible once animation starts */
 }
 
 /* Staggered delays for services section */
@@ -1521,3 +1480,5 @@ sup {
 .skill.element-in-view {
     animation-delay: 0.5s;
 }
+
+/* Basic Styles & Animations End ================================================= */
