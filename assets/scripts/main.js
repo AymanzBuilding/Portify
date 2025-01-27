@@ -259,20 +259,20 @@ document.querySelectorAll('#mobile-nav a').forEach(function (link) {
     });
 });
 
-// ========================= Intersection Observer (Animate on Scroll) =========================
-const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('element-in-view');
-        } else {
-            entry.target.classList.remove('element-in-view');
-        }
-    });
-}, { threshold: 0.2 });
+// // ========================= Intersection Observer (Animate on Scroll) =========================
+// const observer = new IntersectionObserver((entries, observer) => {
+//     entries.forEach(entry => {
+//         if (entry.isIntersecting) {
+//             entry.target.classList.add('element-in-view');
+//         } else {
+//             entry.target.classList.remove('element-in-view');
+//         }
+//     });
+// }, { threshold: 0.2 });
 
-const elementsToAnimate = document.querySelectorAll('.about-left, .about-right, .cards-container, .card, .services-header-container, .services-cards-container, .transparent-card, .skills-row, .skills-left, .skills-right, .skill');
+// const elementsToAnimate = document.querySelectorAll('.about-left, .about-right, .cards-container, .card, .services-header-container, .services-cards-container, .transparent-card, .skills-row, .skills-left, .skills-right, .skill');
 
-// Observe elements for animation
-elementsToAnimate.forEach(element => {
-    observer.observe(element);
-});
+// // Observe elements for animation
+// elementsToAnimate.forEach(element => {
+//     observer.observe(element);
+// });
